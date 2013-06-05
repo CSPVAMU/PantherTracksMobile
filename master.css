@@ -1,0 +1,75 @@
+body {
+	background-image: url(AppBkgd1280_720.png);
+	background-attachment: fixed;
+	background-color: #634C89;
+	color: white;
+	text-align: left;
+	font-weight:bold;
+}
+
+.textInput
+{
+	color: #ffffff;
+	width: 240px;
+	height: 20px;
+	background: none;
+	border: none;
+	color: #000000;
+	margin: 10px;
+}
+
+.textInput2
+{
+	color: #ffffff;
+	width: 277px;
+	height: 17px;
+	background: none;
+	border: none;
+	color: #000000;
+	margin: 10px;
+}
+
+.fieldHolder
+{
+	width: 263px;
+	height: 44px;
+	background: url(img/text.png) no-repeat;
+	float: none;
+}
+
+.fieldHolder2
+{
+	width: 300px;
+	height: 41px;
+	background: url(img/textfield.png) no-repeat;
+	float: none;
+}
+
+.button {
+	width: 113px;
+	height: 42px;
+	background: transparent;
+	float: none;
+	border-top-width: 0;
+	border-right-width: 0;
+	border-bottom-width: 0;
+	border-left-width: 0;
+}
+
+.dropdown
+{
+	color: #ffffff;
+	width: 279px;
+	height: 40px;
+	background: none;
+	border: none;
+	color: #000000;
+	margin: 0px;
+}
+
+.button2
+{
+	position:fixed;
+	top:5px;
+	left:245px;
+}

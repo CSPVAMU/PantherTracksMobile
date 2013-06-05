@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>PantherTracks</title>
+	  <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title">
+	  <script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="main.js"></script>
+      <script src="jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="execute.js"></script>
+  </head>
+  
+  <body onLoad="onload();">
+  
+  <center>
+  
+  <br><br>
+  <img src="img/AppLogo2.png" width="242" height="155" align="top">
+    
+    
+    <br><br><br>
+      
+  <form name="Form1" method="post">
+  
+  	<div class="fieldHolder">
+	<input title="Username" id="user" type="text" name="field1" onclick="this.value='';"
+     onblur="this.value=!this.value?'Username':this.value;" value="Username" class="textInput" />
+    </div>
+  
+  	<br>
+  
+  	<div class="fieldHolder">
+		<input title="Password" id="pass" type="password" name="field2" value="Password" onclick="this.value='';" class="textInput" />
+    </div>
+    
+    <br><br>
+    
+    <button type="button" style="border: 0; position:fixed; bottom:35px; left:32px; background: transparent" onClick="signUp();">
+    <img src="img/signUpButton.png" width="113" heght="42" alt="submit" />
+	</button>
+    
+	<button type="submit" id="login" style="border: 0; position:fixed; bottom:35px; right:32px; background: transparent" onClick="test();">
+    <img src="img/button.png" width="113" heght="42" alt="submit" />
+	</button>
+    
+   	<br>
+   	<br>
+  </form>
+  
+  </center>
+  
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Sign Up</title>
+	  <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title">
+	  <script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="main.js"></script>
+  </head>
+  <body>
+  
+  <a href="userType.html"><img src="img/backButton.png"></a>
+  <br>
+  <center><img src="img/AppLogo2.png" width="165" height="104" align="top"></center>
+  <br>
+  
+  <center>
+  <div style="height:220px;width:310px; overflow:scroll">
+  
+  	<form name="Form2" action="http://pvamu.hazar.us/php/signup.php" method="post">
+  
+  		Firstname
+        <center>
+  			<div class="fieldHolder2">
+  				<input title="Firstname" id="fname" type="text" value="" name="field1" class="textInput2" />
+  			</div>
+    	</center>
+    	<br>
+    
+    	Lastname
+        <center>
+    		<div class="fieldHolder2">
+  				<input title="Lastname" id="lname" type="text" value="" name="field2" class="textInput2" />
+  			</div>
+		</center>    
+    	<br>
+    
+    	PV Email
+        <center>
+    		<div class="fieldHolder2">
+  				<input title="PVemail" id="email" type="text" value="" name="field3" class="textInput2" />
+  			</div>
+    	</center>
+    	<br>
+        
+        Password
+        <center>
+    		<div class="fieldHolder2">
+  				<input title="Password" id="passwd" type="password" value="" name="field4" class="textInput2" />
+  			</div>
+    	</center>
+    	<br>
+        
+        Retype Password
+        <center>
+    		<div class="fieldHolder2">
+  				<input title="RetypePassword" id="repass" type="password" value="" name="field5" class="textInput2" />
+  			</div>
+    	</center>
+    	<br>
+    
+    	Major
+        <center>
+    		<div class="fieldHolder2">
+    			<select name="Major" id="major" class="dropdown">
+        			<option value="Computer Science">Computer Science</option>
+            		<option value="Computer Engineering">Computer Engineering</option>
+            		<option value="Electrical Engineering">Electrical Engineering</option>
+            		<option value="Mechanical Engineering">Mechanical Engineering</option>
+            		<option value="Chemical Engineering">Chemical Engineering</option>
+        		</select>
+  			</div>
+		</center>
+    	<br>
+    
+    	Classification
+        <center>
+    		<div class="fieldHolder2">
+  				<select name="field7" id="major" class="dropdown">
+        			<option value="Freshman">Freshman</option>
+            		<option value="Sophmore">Sophmore</option>
+            		<option value="Junior">Junior</option>
+            		<option value="Senior">Senior</option>
+            		<option value="Grad">Grad</option>
+        		</select>
+  			</div>
+    	</center>
+       
+  </div>
+  
+  		<br>
+        
+		<button type="submit" style="border: 0; background: transparent" onClick="return validateEmail('student');">
+    		<img src="img/submitButton.png" width="113" heght="42" alt="submit" />
+        </button>
+        
+  	</form>
+  </center>
+  
+  <br>
+  
+  <center>
+    
+    <!--<button type="submit" style="border: 0; background: transparent" onClick="return validateEmail('student');">
+    <img src="img/submitButton.png" width="113" heght="42" alt="submit" />
+	</button>-->
+   
+   </center>
+  
+  </body>
+  
+</html>
