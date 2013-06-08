@@ -1,4 +1,3 @@
-
 ==Change Log==
 ===2013-06-08===
 Created a .gitignore file to ignore db connection file php/mysql.php and created a php/mysql_example.php. This way everyone can have their own local version of the database connection file and we don't want a file with database connection info on there anyway (with the idea in mind this will be open source one day). Contributors can use the example to create their own local version of php/mysql.php for local testing and development.
@@ -11,4 +10,3 @@ Created a folder, db_exports, has an export of the database with date. Open sour
 
 ==Notes==
 Consider [http://www.php.net/manual/en/class.pdo.php PDO class] for database connection, [http://php.net/manual/en/function.mysql-connect.php mysql_connect is officially depreciated as of PHP 5.5.0]. This is a decent quick [http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/ PDO refernce].
-
