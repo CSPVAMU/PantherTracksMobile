@@ -1,8 +1,10 @@
+__NOTOC__
+
 ==Change Log==
 ===2013-06-09===
 (James)
 * Made notes and diagram on table relationships.
-
+* More notes.
 
 ===2013-06-08===
 (James)
