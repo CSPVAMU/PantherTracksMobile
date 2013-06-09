@@ -17,6 +17,8 @@
 Consider [http://www.php.net/manual/en/class.pdo.php PDO class] for database connection, [http://php.net/manual/en/function.mysql-connect.php mysql_connect is officially depreciated as of PHP 5.5.0]. This is a decent quick [http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/ PDO reference].
 
 ===Database notes===
+There is a [https://github.com/CSPVAMU/PantherTracksMobile/tree/master/db_exports DB Relationship diagram] in the db_exports folder.
+
 * Looking at the database from a student perspective.
 ** Users that are students have a reference table named StudentRecords. There can be any number of records per student.
 ** StudentRecords links completed courses to a student.

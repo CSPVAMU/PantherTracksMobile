@@ -89,113 +89,94 @@
         </script>
     </head>
     <body>
-    
-<div id="page">
-
-
-
-<div id="jqt" align="center" >
-
-
-<!-- #home-->
-<div id="home" class="current" style="background-image: url(../img/bg2.jpg); color:white;">
-                <div class="toolbar">
-                    <h1>Home</h1>
-                    <div onClick="logout();" class="button">Logout</div>
+        <div id="page">
+            <div id="jqt" align="center" >
+            
+                <!-- #home-->
+                <div id="home" class="current" style="background-image: url(../img/bg2.jpg); color:white;">
+                    <div class="toolbar">
+                        <h1>Home</h1>
+                        <div onClick="logout();" class="button">Logout</div>
+                    </div>
+                    <p>Hello</p>
                 </div>
+                <!-- End #home -->
                 
-                <p>Hello</p>
-
-  </div>
-<!-- End #home -->
-    
-
-<!-- #Sections -->
-	<div id="faculty" style="background-image: url(../img/bg2.jpg); color:white; ">
-		<div class="toolbar">
-			<h1>Faculty</h1>
-		</div>
-		<div id="wrapper">
-			<div id="scroller">   
-            <ul class="edgetoedge">
-            	</ul>         
-				     <!--<div class="name"></div>-->
-                <form name="Form2" action="http://pvamu.hazar.us/php/authorize.php" method="post">
-               <!--input type="hidden" name="1" value="1"/>-->
-                <input type="hidden"  name="state" value="upload"/> 
-                <div class="authorize" >
+                <!-- #Sections -->
+                <div id="faculty" style="background-image: url(../img/bg2.jpg); color:white; ">
+                    <div class="toolbar">
+                        <h1>Faculty</h1>
+                    </div>
+                    <div id="wrapper">
+                        <div id="scroller">   
+                            <ul class="edgetoedge">
+                            </ul>         
+                            <!--<div class="name"></div>-->
+                            <form name="Form2" action="http://pvamu.hazar.us/php/authorize.php" method="post">
+                                <!--input type="hidden" name="1" value="1"/>-->
+                                <input type="hidden"  name="state" value="upload"/> 
+                                <div class="authorize" ></div>
+                                <button type="submit" style="border: 0; background: transparent" onClick="return authorized()";>
+                                <img src="../img/submitButton.png" width="113" heght="42" alt="submit" />
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End #Sections -->
                 
-				</div>
-                 <button type="submit" style="border: 0; background: transparent" onClick="return authorized()";>
-                 <img src="../img/submitButton.png" width="113" heght="42" alt="submit" />
-                 </button></form>
-			</div>
-			</div>
-	  </div>
-  </div>
+            </div><!-- End #jqt -->
+
+            <div id="loading"><p><img src="img/loading.gif" /></p></div>
+
+            <nav id="tabbar"><!-- Action & navigation -->
+                <ul >
+                    <li><a href="#home" class="current flip"><strong>Home</strong><div class="home"></div></a></li>    
+                    <li><a href="#faculty" class="flip"><strong>Faculty</strong><div class="list" onClick="getFaculty();"></div></a></li>
+                    <li><a href="help" class="flip"><strong>Help</strong><div class="infos"></div></a></li>
+                </ul>
+            </nav>
+            
+        </div> <!-- End #page -->
 
 
-  
-  <!-- End #Sections -->
-   
-</div> 
-<!-- End #jqt -->
+        <script type="text/javascript">
+            //Show search
+            var visible = false;
+            function moveDown() {
+                if(visible) {
+                    moveUp();
+                } else {
+                    var height = $(".searchbox").height();
+                    $(".searchbox").css('-webkit-transform', 'translate3d(0px,+46px,0)');
+                    //$(".searchbox").show().css('-webkit-transform', 'translate3d(0px,+46px,0)');
+                    //$('#element').css('z-index'); 
+                }
+                visible = !visible;
+            }
+            
+            function moveUp() {
+                var height = $(".searchbox").height();
+                $(".searchbox").css('-webkit-transform', 'translate3d(0px,0px,0)');
+                //$(".searchbox").show().css('z-index', '200').css('-webkit-transform', 'translate3d(0px,0px,0)');
+            }
 
-<div id="loading"><p><img src="img/loading.gif" /></p></div>
+            // if text input field value is not empty show the "X" button
+            $("#search").keyup(function() {
+                $("#x").show();
+                //if ($.trim($("#search").val()) == "") {
+                if ($("#search").val() == "") {
+                    $("#x").hide();
+                }
+            });
+            // on click of "X", delete input field value and hide "X"
+            $("#x").click(function() {
+                $("#search").val("");
+                $(this).hide();
+            });
+        </script>
+        <script type='text/javascript' src='src/itabbar.js'></script>       <!--iTabbar http://itabbar.com/-->
+        <script type='text/javascript' src='src/fullscreen.js'></script>    <!--part of iTabbar http://itabbar.com/-->
 
-<nav id="tabbar">
-    <ul >
-     <!-- Action & navigation -->
-<li><a href="#home" class="current flip"><strong>Home</strong><div class="home"></div></a></li>    
-<li><a href="#faculty" class="flip"><strong>Faculty</strong><div class="list" onClick="getFaculty();"></div></a></li>
-<li><a href="help" class="flip"><strong>Help</strong><div class="infos"></div></a></li>
-
-
-    </ul>
-</nav>
-</div> <!-- End #page -->
-
-
-<script type="text/javascript">
-//Show search
-var visible = false;
-function moveDown() {
-    if(visible)
-    {
-        moveUp();
-    }
-    else
-    {
-        var height = $(".searchbox").height();
-        $(".searchbox").css('-webkit-transform', 'translate3d(0px,+46px,0)');
-		//$(".searchbox").show().css('-webkit-transform', 'translate3d(0px,+46px,0)');
-		//$('#element').css('z-index'); 
-    }
-    visible = !visible;
-}
-function moveUp() {
-    var height = $(".searchbox").height();
-    $(".searchbox").css('-webkit-transform', 'translate3d(0px,0px,0)');
-	//$(".searchbox").show().css('z-index', '200').css('-webkit-transform', 'translate3d(0px,0px,0)');
-}
-
-	// if text input field value is not empty show the "X" button
-	$("#search").keyup(function() {
-		$("#x").show();
-		//if ($.trim($("#search").val()) == "") {
-		if ($("#search").val() == "") {
-			$("#x").hide();
-		}
-	});
-	// on click of "X", delete input field value and hide "X"
-	$("#x").click(function() {
-		$("#search").val("");
-		$(this).hide();
-	});
-
-</script>
-<script type='text/javascript' src='src/itabbar.js'></script> 
-<script type='text/javascript' src='src/fullscreen.js'></script>  
-
-</body>
+    </body>
 </html>
