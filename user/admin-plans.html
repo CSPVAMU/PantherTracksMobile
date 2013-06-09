@@ -26,78 +26,70 @@
         <script src="../includes/getFaculty.js"></script>       
 
         <!--third party? scripts-->
-        <script src="../cordova-2.2.0.js"></script>  <!--part of PhoenGap: Apache Cordova script building native mobile apps from html5 sources-->
-        <script src="../main.js"></script>           <!--part of PhoneGap-->
-
-        <script src="src/iscroll.js"></script>       <!--iScroll v4.1.9 http://cubiq.org/iscroll-4-->
-
-        <script src='src/zepto.min.js'></script>     <!--zepto jQuery alternative http://zeptojs.com/-->
-        <script src='src/jqtouch.min.js'></script>   <!--jQTouch, animations for zepto or jQuery-->
-
+        <script src='src/zepto.min.js'></script>            <!--zepto jQuery alternative http://zeptojs.com/-->
+        <script src='src/jqtouch.min.js'></script>          <!--jQTouch, animations for zepto or jQuery-->
+        <script src='src/jqt.autotitles.min.js'></script>   <!--jQTouch auto tiles-->
         
+        <script src="../cordova-2.2.0.js"></script>         <!--part of PhoenGap: Apache Cordova script building native mobile apps from html5 sources-->
+        <script src="../main.js"></script>                  <!--part of PhoneGap jQuery/zapto dependency-->
         
-        <script src='src/jqt.autotitles.min.js'></script>  
-        <script src='src/yql.js'></script>  
-        <script src="src/add2home.js" charset="utf-8"></script>
+        <script src="src/iscroll.js"></script>              <!--iScroll v4.1.9 http://cubiq.org/iscroll-4-->
+        <script src="src/add2home.js"></script>             <!--Create icon on home screen http://cubiq.org/add-to-home-screen-->
 
-        
-        
-        
-        
-        
-    <script type="text/javascript">
-    var myScroll;
-    function loaded() {
-        setTimeout(function () {
-            myScroll = new iScroll('wrapper');
-        }, 100);
-    }
+        <script src='src/yql.js'></script>                  <!--Yahoo Query Language-->
 
-    /* high compatibility (iDevice + Android)*/
-    //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-    //document.addEventListener('DOMContentLoaded', setTimeout(function () { loaded(); }, 200), false);
-    </script>
+        <script type="text/javascript">                     <!--Part of iScroll-->
+            var myScroll;
+            function loaded() {
+                setTimeout(function () {
+                    myScroll = new iScroll('wrapper');
+                }, 100);
+            }
 
-    <script type="text/javascript" charset="utf-8">
-    if((navigator.userAgent.match(/iPhone/i))||(navigator.userAgent.match(/iPod/i))||(navigator.userAgent.match(/iPad/i))){
-        var jQT = new $.jQTouch({
-            //cacheGetRequests: false,
-            icon: 'img/iTab-glossy.png',
-            icon4: 'img/iTab-glossy.png',
-            addGlossToIcon: false,
-            startupScreen: 'img/istartup.png',
-            themeSelectionSelector: '#jqt #themes ul',
-            useFastTouch: false,
-            statusBar: 'default',
-            preloadImages: [
-            'img/loading.gif',
-            'img/iTab-glossy.png',
-            'img/pinstripes2.gif',
-            'img/UIBack.png',
-            'img/UIBackPressed.png',
-            ]
-        });
-    }else {	
-        var jQT = new $.jQTouch({
-            //statusBar: 'black-translucent',
-            themeSelectionSelector: '#jqt #themes ul',
-            useFastTouch: false,
-            statusBar: 'default',
-            preloadImages: [
-            'img/loading.gif',
-            'img/iTab-glossy.png',
-            'img/pinstripes2.gif',
-            'img/UIBack.png',
-            'img/UIBackPressed.png',
-            ]
-        });
-        //alert('is not iPhone');
-    }
-    </script>
+            /* high compatibility (iDevice + Android)*/
+            //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+            //document.addEventListener('DOMContentLoaded', setTimeout(function () { loaded(); }, 200), false);
+        </script>
 
+        <script type="text/javascript">                     <!--part of jQtouch-->
+            if((navigator.userAgent.match(/iPhone/i))||(navigator.userAgent.match(/iPod/i))||(navigator.userAgent.match(/iPad/i))){
+                var jQT = new $.jQTouch({
+                    //cacheGetRequests: false,
+                    icon: 'img/iTab-glossy.png',
+                    icon4: 'img/iTab-glossy.png',
+                    addGlossToIcon: false,
+                    startupScreen: 'img/istartup.png',
+                    themeSelectionSelector: '#jqt #themes ul',
+                    useFastTouch: false,
+                    statusBar: 'default',
+                    preloadImages: [
+                    'img/loading.gif',
+                    'img/iTab-glossy.png',
+                    'img/pinstripes2.gif',
+                    'img/UIBack.png',
+                    'img/UIBackPressed.png',
+                    ]
+                });
+            }else {
+                var jQT = new $.jQTouch({
+                    //statusBar: 'black-translucent',
+                    themeSelectionSelector: '#jqt #themes ul',
+                    useFastTouch: false,
+                    statusBar: 'default',
+                    preloadImages: [
+                    'img/loading.gif',
+                    'img/iTab-glossy.png',
+                    'img/pinstripes2.gif',
+                    'img/UIBack.png',
+                    'img/UIBackPressed.png',
+                    ]
+                });
+                //alert('is not iPhone');
+            }
+        </script>
     </head>
-
-<body>
+    <body>
+    
 <div id="page">
 
 

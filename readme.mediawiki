@@ -1,11 +1,14 @@
 ==Change Log==
-===2013-06-08===
+===2013-06-08 James===
 Created a .gitignore file to ignore db connection file php/mysql.php and created a php/mysql_example.php. This way everyone can have their own local version of the database connection file and we don't want a file with database connection info on there anyway (with the idea in mind this will be open source one day). Contributors can use the example to create their own local version of php/mysql.php for local testing and development.
 
 Created this readme file. In the future this will explain what the project is and how it works. Github allows for many mark up languages to be used for the readme, I chose mediawiki because it's the one I'm most familar with, feel free to change it.
 
 Created a folder, db_exports, has an export of the database with date. Open source versions of this project should only have the structure. The export named pvamu_pvplanner_2013-06-08.sql is the whole database.
 
+Removed the .LCK files and added that to .gitignore.
+
+Made notes on scripts and files in admin-plans.html (still trying to work everything out).
 
 
 ==Notes==
