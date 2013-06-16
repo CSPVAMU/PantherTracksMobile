@@ -50,6 +50,9 @@ Consider [PDO class](http://www.php.net/manual/en/class.pdo.php) for database co
 (http://php.net/manual/en/function.mysql-connect.php). This is a decent quick [PDO reference]
 (http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/).
 
+A JavaScript file for global info like rootpath (see `studentHistory-alt.js`). This variablel allows
+for relative paths and not a hard coded the URI.
+
 ### Database notes
 There is a [DB Relationship diagram](https://github.com/CSPVAMU/PantherTracksMobile/tree/master/db_exports)
 in the db_exports folder.
