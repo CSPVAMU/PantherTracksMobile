@@ -1,11 +1,13 @@
 <?php
 /* 
- * Change mysql_connect to reflect local environment and rename to mysql.php.
+ * Change defines to reflect local environment and rename to mysql.php.
  * An export of the database should be available in the db_exports folder.
  */
 
-define("DB_HOST", "Your host name");
-define("DATABASE", "Name of database");
+define("DB_HOST", "localhost");         // Most likely
+define("DATABASE", "pvamu_pvplanner");  // Default name in sql export.
+
+define("PDO", "mysql:host=localhost;dbname=pvamu_pvplanner");
 define("DB_USER", "Database user name");
 define("DB_PASS", "Password for that user");
 

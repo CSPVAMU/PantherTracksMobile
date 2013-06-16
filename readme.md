@@ -1,10 +1,16 @@
 Change Log
 ----------
+### 2013-06-16 (James)
+* Added define for PDO connection in `mysql-example.php`. Seperate these into a `config.php` file in 
+  the future.
+
+  
+
 ### 2013-06-15 (James)
 * Changed this readme to [markdown](http://daringfireball.net/projects/markdown/) because that seems
   to be more standard than the mediawiki format.
 * Added column, courseID to StudentRecords table. Populated it with courseID based on classID in
-  `degreeplan.js`. I've done my best to conform to the current codebase, but there are some changes
+  `degreeplan.js`. I've done my best to conform to the current code base, but there are some changes
   that will have to be made to make better use of the database. For example, `studenthistory.js` is 
   dependant on the order the classes are stored in `degreeplan.js`; with multiple degree plans using
   many of the same classes this will have to be different. It will require some additional
@@ -14,12 +20,12 @@ Change Log
   other info we deem necessary. This would allow us to recreate the history of a specific class 
   (like who was in it), an entire semester (a history of all courses offered and how many students 
   took each course), what every professor has taught, and if we incorporate grades we can provide
-  university wide statistics that may yield interesting resulte--but that's for the future.
+  university wide statistics that may yield interesting result--but that's for the future.
 * Before I went off on the above tangent, I filled in some bogus year and semester data for
   studentID 160.
 * Created `studentusers-alt.html`, `studentHistory-alt.js`, and `studentRecords.php` (similar to 
   `studenthistory.php`) to show how the new database tables can be used. The `studentRecords.php` 
-  file returns all student records by defualt. Passing display=plan through the URI will only return 
+  file returns all student records by default. Passing display=plan through the URI will only return 
   student records that apply to the students selected degree plan.
 * Created `courseDisplay.css` to be reused by sections that display course information.
 
@@ -50,7 +56,7 @@ Consider [PDO class](http://www.php.net/manual/en/class.pdo.php) for database co
 (http://php.net/manual/en/function.mysql-connect.php). This is a decent quick [PDO reference]
 (http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/).
 
-A JavaScript file for global info like rootpath (see `studentHistory-alt.js`). This variablel allows
+A JavaScript file for global info like rootpath (see `studentHistory-alt.js`). This variable allows
 for relative paths and not a hard coded the URI.
 
 ### Database notes
