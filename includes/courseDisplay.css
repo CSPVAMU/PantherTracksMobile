@@ -1,0 +1,29 @@
+
+/** Student Users Course History **/
+#courseHistory {
+    width: 320px;
+}
+
+#courseHistory .courses {
+    background: #4a2e6b;
+}
+
+#courseHistory .courseID {
+    display: block;
+    float: left;
+}
+
+#courseHistory .title {
+    clear: left;
+    color: #ffcc66;
+    display: block;
+    margin: 0 auto;
+    width: 275px;
+}
+
+#courseHistory .modified {
+    clear: left;
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+}
