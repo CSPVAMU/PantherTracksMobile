@@ -3,8 +3,13 @@ Change Log
 ### 2013-06-16 (James)
 * Added define for PDO connection in `mysql-example.php`. Seperate these into a `config.php` file in 
   the future.
-
-  
+* Manually added courses required for Computer Science 2012 and Computer Science 2008 degree plan. 
+  Still plenty of details to fill in, but hopefully some of that can wait until we have an easier 
+  way to input.
+* Created new columns in courses table, subject and level, for easier sorting. An SQL query that
+  returns all `subject = 'MATH' AND level = 1` courses will show all freshman level math courses.
+* Manually updated degreePlanRequirements table for Computer Science 2012 and Computer Science 2008 
+  degree plan.
 
 ### 2013-06-15 (James)
 * Changed this readme to [markdown](http://daringfireball.net/projects/markdown/) because that seems
