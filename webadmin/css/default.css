@@ -1,0 +1,17 @@
+@import url(reset.min.css);
+@import url(tablesorter.css);
+
+.hidden {
+    display: none;
+}
+
+#plan-details {
+    margin: 0 auto;
+    width: 75%;
+}
+
+#display-table,
+#display-table td {
+    border: 1px solid;
+    margin: 1px;
+}
