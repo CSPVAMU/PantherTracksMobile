@@ -16,9 +16,10 @@ Change Log
   results--will fix later. This is similar in functionality to the simple demo I showed last
   Wednesday except the code is more refined (html for display, ajax call to php for database--the 
   original example was all php).
-  > Just some thouhts on this, we're really developing three different things that all use the same
-    database. An Android app, an iOS app, and a website. Instead of repositories for each maybe we
-    can get away with just a folder for each.
+  
+> Just some thouhts on this, we're really developing three different things that all use the same
+  database. An Android app, an iOS app, and a website. Instead of repositories for each maybe we
+  can get away with just a folder for each.
 
 ### 2013-06-15 (James)
 * Changed this readme to [markdown](http://daringfireball.net/projects/markdown/) because that seems
