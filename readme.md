@@ -1,5 +1,11 @@
 Change Log
 ----------
+### 2013-06-17 (James)
+* Found the error for yesterday's last bullet, it wasn't a SQL problem it was a type in the 
+  database (no surprise there).
+* For tablesorter jQuery plugin to sort by columns as expected the table needs to be recreated each
+  time. Removing and apending <tr>'s break the sorting.
+
 ### 2013-06-16 (James)
 * Added define for PDO connection in `mysql-example.php`. Seperate these into a `config.php` file in 
   the future.
