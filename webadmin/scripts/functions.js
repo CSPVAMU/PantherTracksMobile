@@ -43,9 +43,12 @@ var uniqueReq = [];
  * List requirements and courses that fulfill them for chosen degree plan.
  */
 function viewDegreePlanReq(planID) {
-    $("#display-table > tbody tr").each(function () {
-        $(this).remove();
-    });
+    $("#display-table").remove();
+    $("#plan-details").append($("<table id=\"display-table\" class=\"tablesorter\">"));
+    $("#display-table").append($("<thead>"));
+    $("#display-table thead").append("<tr><th>Degree Requirements</th><th>Courses</th></tr>");
+    $("#display-table").append($("<tbody>"));
+    
     var uniqueReq = [];
     var planCourses = [];
     $.ajax({
@@ -77,9 +80,8 @@ function viewDegreePlanReq(planID) {
                         "<td>" + courseList + "</td>" +
                     "</tr>");
             }
-            $("#display-table").tablesorter({ 
-                sortList: [[0,0]] 
-            }); 
+            console.log("call tablesorter");
+            $("#display-table").tablesorter();
         },
         error: function () {
             console.log("error from viewDegreePlanReq()");

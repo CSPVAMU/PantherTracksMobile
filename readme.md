@@ -1,10 +1,12 @@
 Change Log
 ----------
+
 - 2013-06-22 (James)
     * Removed a couple of temporary files I made notes in, but copied the [notes into the wiki]
       (https://github.com/CSPVAMU/PantherTracksMobile/wiki/some-temporary-notes).
     * Made changes to user 160 in database to refelect changes in course table.
-
+    * Updated example database useage `includes/exampleStudentRecordCall.html`, had a problem
+      creating a sql statement that would return non-plan courses. Will have to look into it more.
 
 - 2013-06-16 (James)
     * Added define for PDO connection in `mysql-example.php`. Seperate these into a `config.php` 
