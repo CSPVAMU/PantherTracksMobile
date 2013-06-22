@@ -1,5 +1,8 @@
 Change Log
 ----------
+### 2013-06-22 (James)
+* Removed a temporary file I made notes in, but copied the notes into the wiki.
+
 ### 2013-06-16 (James)
 * Added define for PDO connection in `mysql-example.php`. Seperate these into a `config.php` file in 
   the future.
