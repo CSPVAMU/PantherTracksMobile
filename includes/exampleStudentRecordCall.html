@@ -29,9 +29,11 @@
                 dataType: 'json',
                 success: function (data) {
                     recordslen = data.length;
+                    var totalch = 0;
                     for(i = 0; i < recordslen; i++) {
                         //TODO: display by year and semester
                         var recordObj = JSON.parse(data[i]);
+                        totalch += parseInt(recordObj.creditHours, 10);
                         console.log(recordObj);
                         $("#listCourses tbody").append(
                             "<tr>" + 
@@ -44,6 +46,7 @@
                             "</tr>"
                         );
                     }
+                    $("#totalCH").html("Total Credit Hours: " + totalch)
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     console.log(xhr);
@@ -77,6 +80,7 @@
             <tbody>
             </tbody>
         </table>
+        <p id="totalCH"></p>
         <script>
             //show plan records on load.
             $(document).ready(function () {
@@ -94,7 +98,6 @@
                     }
                 });
             });
-            
         </script>
     </body>
 </html>
