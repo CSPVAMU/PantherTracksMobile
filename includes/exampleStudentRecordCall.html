@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <!-- Simple example to use studentRecords.php to get all student records or just the records that
+         apply to the students current plan. -->
+    <head>
+        <title>PantherTracks</title>
+        <meta charset="utf-8">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>
+        var rootpath = "http://" + document.domain + "/sandbox/PantherTracksMobile/"; //TODO: this var should be global.
+
+        /**
+         * Display's list of courses completd by student.
+         * @param {string} display If set to "plan" will only display courses in current degree plan.
+         */
+        function studentHistory(display) {
+            $("#listCourses tbody").html('');
+            var studentid = window.sessionStorage.student;
+            if (!studentid) {
+                console.log("no student id");
+            }
+            if (!display) {
+                var display = "all";
+            }
+            
+            $.ajax({
+                type: "GET",
+                url: rootpath + "includes/studentRecords.php?studentid=" + studentid + "&display=" + display,
+                dataType: 'json',
+                success: function (data) {
+                    recordslen = data.length;
+                    for(i = 0; i < recordslen; i++) {
+                        //TODO: display by year and semester
+                        var recordObj = JSON.parse(data[i]);
+                        console.log(recordObj);
+                        $("#listCourses tbody").append(
+                            "<tr>" + 
+                                "<td>" + (i+1) + "</td>" +
+                                "<td>" + recordObj.courseID + "</td>" +
+                                "<td>" + recordObj.title + "</td>" +
+                                "<td>" + recordObj.semesterTaken + "</td>" +
+                                "<td>" + recordObj.yearTaken + "</td>" +
+                                "<td align=\"right\">" + recordObj.creditHours + "</td>" +
+                            "</tr>"
+                        );
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr);
+                    console.log(ajaxOptions);
+                    console.log(thrownError);
+                    $("#listCourses").html("error,check console.")
+                }
+            });
+        }
+        </script>
+    </head>
+    <body>
+        <p>This uses jQuery 1.10.1 (not a local copy)</p>
+        <p>If windows.sessiontStorage.student is not defined <a href="../index.html">log in</a> then
+           navigate back to this page.</p>
+        <p>The objects also show in the console (F12 from Chrome).</p>
+        <input id="swapButton" type="button" value="show all">
+        <table id="listCourses" border=1>
+            <thead>
+                <tr>
+                    <th  id="showing" colspan="6">Showing Plan</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Course ID</th>
+                    <th>Title</th>
+                    <th colspan="2">When</th>
+                    <th>Credit Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <script>
+            //show plan records on load.
+            $(document).ready(function () {
+                studentHistory("plan");
+                //make button swap between show plan and show all.
+                $("#swapButton").click(function () {
+                    if($("#swapButton").val() == "show all") {
+                        studentHistory("all");
+                        $("#swapButton").val("show plan");
+                        $("#showing").html("Showing All");
+                    } else {
+                        studentHistory("plan");
+                        $("#swapButton").val("show all");
+                        $("#showing").html("Showing Plan");
+                    }
+                });
+            });
+            
+        </script>
+    </body>
+</html>
