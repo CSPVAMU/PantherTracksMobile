@@ -9,7 +9,7 @@
  *   display=all       Returns all student records, this is the default if not provided.
  *   display=plan      Retuns student records that match the student's chosen degree plan.
  */
-
+error_reporting(-1);
 header('Content-Type: application/json');
 include '../php/mysql.php';
 
@@ -53,7 +53,7 @@ if (isset($studentid)) {
         $STH = $DBH->query($sql);
         $STH->setFetchMode(PDO::FETCH_ASSOC);
         
-        $response = [];
+        $response = array(); //
         while($row = $STH->fetch()) {
             array_push($response, json_encode($row));
         }
