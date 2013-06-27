@@ -1,5 +1,8 @@
 Change Log
 ----------
+- 2013-06-25 (James)
+    * Changed studentRecords.php to create arrays in a more official manor.
+    * Changed users.planID to users.chosenPlan in database; still need to make a dump.
 
 - 2013-06-22 (James)
     * Removed a couple of temporary files I made notes in, but copied the [notes into the wiki]
