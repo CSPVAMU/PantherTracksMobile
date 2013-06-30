@@ -11,7 +11,7 @@ function history(){
     $.ajax({
     	url: "http://pvamu.hazar.us/includes/studenthistory.php",
     	async: false,
-		data: {studentid: sessionStorage.student},
+		data: {studentid: sessionStorage.student, format: "json"},
     	dataType: 'json',
     	success: function(data) {
     		for (var i=0, len=data.length; i < len; i++) {

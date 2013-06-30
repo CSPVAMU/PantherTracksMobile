@@ -31,6 +31,36 @@ include '../php/mysql.php';
   
 // We should use our custom function to handle errors.  
 //set_error_handler('nettuts_error_handler'); 
+
+function studentHistory ($studentid){
+	$db = & CDB::get_db();
+	$sql = "Select `classID`, `modifiedBy`, `modifiedOn`, `status` FROM `StudentRecords` WHERE `studentID`='".$studentid."' ORDER BY `classID` ASC";
+	$arr = & $db->get_array($sql);
+	$ordered = array();
+	for($n=0; $n<46;$n++){
+		$ordered[$n][0]="unchecked";
+	}
+	if (sizeof($arr) > 0){
+		foreach($arr as $i) {
+			$sql = "SELECT `first`,`last` FROM `users` WHERE `id`='".$i['modifiedBy']."'";
+			$arr2 = & $db->get_row($sql);
+			//Corresponds to records[classID][detail] in Student History Module
+			if($i['status']==0)
+				$ordered[$i['classID']-1][0]="checked";	
+			$ordered[$i['classID']-1][1]=$arr2['first']." ".$arr2['last'];
+			$ordered[$i['classID']-1][2]=$i['modifiedOn'];
+		}
+	}
+	return $ordered;	
+}
+
+if($format=="json"){
+	$ordered = array();
+	$ordered = studentHistory($studentid);
+	echo json_encode($ordered);	
+}
+
+/*
 if ( isset($studentid)){
 	$db = & CDB::get_db();
 	$sql = "Select `classID`, `modifiedBy`, `modifiedOn`, `status` FROM `StudentRecords` WHERE `studentID`='".$studentid."' ORDER BY `classID` ASC";
@@ -54,7 +84,7 @@ if ( isset($studentid)){
 	
 	echo json_encode($ordered);
 
-}
+}*/
 
 
 

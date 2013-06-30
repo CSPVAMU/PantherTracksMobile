@@ -2,7 +2,7 @@ function getrecords(callback){
 	 $.ajax({
 		url: "http://pvamu.hazar.us/includes/studenthistory.php",
 		async: false,
-		data: {studentid: sessionStorage.student},
+		data: {studentid: sessionStorage.student, format: "json"},
 		dataType: 'json',
 		success: callback,
 		dataType: "json" 
