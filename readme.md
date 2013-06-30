@@ -1,5 +1,13 @@
 Change Log
 ----------
+- 2013-06-30 (Hazar)
+    * Modified includes/studenthistory.php to process DB request from a function called studentHistory this way it can be used by JS and php
+    * Modified studentschedule.js: getrecords now passes a data parameter format:json
+    * Modified studenthistory.js: ajax function now passes a data parameter format:json
+
+- 2013-06-26 (Hazar)
+    * Created includes/degreeplan.php to replace degreeplan.js while the database is still being worked on.
+
 - 2013-06-25 (James)
     * Changed studentRecords.php to create arrays in a more official manor.
     * Changed users.planID to users.chosenPlan in database; still need to make a dump.
