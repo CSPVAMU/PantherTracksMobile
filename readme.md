@@ -1,5 +1,9 @@
 Change Log
 ----------
+- 2013-07-10 (Hazar)
+    * Added an array that just returns class IDs under includes/degreeplan.php
+    * Added Type argument (with a default value) to StudentHistory function to return just a list of completed classes.
+
 - 2013-06-30 (Hazar)
     * Modified includes/studenthistory.php to process DB request from a function called studentHistory this way it can be used by JS and php
     * Modified studentschedule.js: getrecords now passes a data parameter format:json
