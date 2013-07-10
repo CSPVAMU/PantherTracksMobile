@@ -1,5 +1,9 @@
 Change Log
 ----------
+- 2013-07-10 (James)
+    * Added an option to return student records that are not part of a students current degree plan
+      in studentRecords.php.
+
 - 2013-07-10 (Hazar)
     * Added an array that just returns class IDs under includes/degreeplan.php
     * Added Type argument (with a default value) to StudentHistory function to return just a list of completed classes.

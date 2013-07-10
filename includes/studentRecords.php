@@ -7,7 +7,8 @@
  *   studentid=#       Studentid number, this is optional (should fall back to session storage if not
  *                     provided).
  *   display=all       Returns all student records, this is the default if not provided.
- *   display=plan      Retuns student records that match the student's chosen degree plan.
+ *   display=plan      Retuns student records that match the students chosen degree plan.
+ *   display=notplan   Returns student records that do not match students current degree plan.
  */
 error_reporting(-1);
 header('Content-Type: application/json');
@@ -40,6 +41,15 @@ if (isset($studentid)) {
                     ON StudentRecords.courseID = courses.courseID
                     WHERE degreePlanRequirements.planID = $chosenPlan
                     AND StudentRecords.studentID = $studentid";
+        } else if ($display == "notplan") {
+            $sql = "SELECT sr.studentID, sr.courseID 
+                    FROM StudentRecords sr
+                    WHERE sr.studentID = $studentid
+                    AND NOT EXISTS (
+                        SELECT dpr.courseOptions
+                        FROM degreePlanRequirements dpr 
+                        WHERE dpr.planID = 1 AND dpr.courseOptions = sr.courseID
+                    )";
         } else {
             $sql = "SELECT StudentRecords.*, courses.*, users.id, users.first, users.last, users.chosenPlan
                     FROM StudentRecords
