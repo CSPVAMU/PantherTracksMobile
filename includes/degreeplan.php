@@ -1,10 +1,37 @@
 <?php 
 //Corresponds to $classes[classID][details] in Student History module
+//MUST CREATE FUNCTION TO RETURN ARRAYS BELOW AFTER FETCHING DATA FROM DATABASE
 
 $classes = array(); //size 45
+$class_nums = array(); //size 45
 $prereqs = array(); //size 45
 $coreqs = array(); //size 45
 
+//CLASS IDS ONLY
+$class_nums[0]="1";
+$class_nums[1]="2";
+$class_nums[2]="3";
+$class_nums[3]="4";
+$class_nums[4]="5";
+$class_nums[5]="6";
+$class_nums[6]="7";
+$class_nums[7]="8";
+$class_nums[8]="9";
+$class_nums[9]="10";
+$class_nums[10]="11";
+$class_nums[11]="12";
+$class_nums[12]="13";
+$class_nums[13]="14";
+$class_nums[14]="15";
+$class_nums[15]="16";
+$class_nums[16]="17";
+$class_nums[17]="18";
+$class_nums[18]="19";
+$class_nums[19]="20";
+$class_nums[20]="21";
+
+
+//FULL DETAILS
 //Calculus I
 $classes[0][0]="1";
 $classes[0][1]="MATH 1124";
