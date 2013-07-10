@@ -32,11 +32,13 @@ include '../php/mysql.php';
 // We should use our custom function to handle errors.  
 //set_error_handler('nettuts_error_handler'); 
 
-function studentHistory ($studentid){
+function studentHistory ($studentid, $type="ordered"){
 	$db = & CDB::get_db();
 	$sql = "Select `classID`, `modifiedBy`, `modifiedOn`, `status` FROM `StudentRecords` WHERE `studentID`='".$studentid."' ORDER BY `classID` ASC";
 	$arr = & $db->get_array($sql);
 	$ordered = array();
+	$list = array();
+	$cnt=0;
 	for($n=0; $n<46;$n++){
 		$ordered[$n][0]="unchecked";
 	}
@@ -45,13 +47,19 @@ function studentHistory ($studentid){
 			$sql = "SELECT `first`,`last` FROM `users` WHERE `id`='".$i['modifiedBy']."'";
 			$arr2 = & $db->get_row($sql);
 			//Corresponds to records[classID][detail] in Student History Module
-			if($i['status']==0)
+			if($i['status']==0){
 				$ordered[$i['classID']-1][0]="checked";	
+				$list[$cnt]=$i['classID'];
+				$cnt++;
+			}
 			$ordered[$i['classID']-1][1]=$arr2['first']." ".$arr2['last'];
 			$ordered[$i['classID']-1][2]=$i['modifiedOn'];
 		}
 	}
-	return $ordered;	
+	if($type=="ordered")
+		return $ordered;	
+	else
+		return $list;
 }
 
 if($format=="json"){
