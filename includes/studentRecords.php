@@ -10,7 +10,11 @@
  *   display=plan      Retuns student records that match the students chosen degree plan.
  *   display=notplan   Returns student records that do not match students current degree plan.
  */
-error_reporting(-1);
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
+
+phpinfo();
+
 header('Content-Type: application/json');
 include '../php/mysql.php';
 
@@ -24,6 +28,7 @@ if (isset($_REQUEST["display"])) {
 }
 
 if (isset($studentid)) {
+
     try {
         $DBH = new PDO(PDO, DB_USER, DB_PASS);
         $sql = "SELECT `chosenPlan` FROM `users` WHERE `id`=$studentid LIMIT 1";
@@ -41,15 +46,14 @@ if (isset($studentid)) {
                     ON StudentRecords.courseID = courses.courseID
                     WHERE degreePlanRequirements.planID = $chosenPlan
                     AND StudentRecords.studentID = $studentid";
-        } else if ($display == "notplan") {
+        } if else ($display == "notplan") {
             $sql = "SELECT sr.studentID, sr.courseID 
                     FROM StudentRecords sr
                     WHERE sr.studentID = $studentid
                     AND NOT EXISTS (
                         SELECT dpr.courseOptions
                         FROM degreePlanRequirements dpr 
-                        WHERE dpr.planID = 1 AND dpr.courseOptions = sr.courseID
-                    )";
+                        WHERE dpr.planID = 1 AND dpr.courseOptions = sr.courseID)";
         } else {
             $sql = "SELECT StudentRecords.*, courses.*, users.id, users.first, users.last, users.chosenPlan
                     FROM StudentRecords
