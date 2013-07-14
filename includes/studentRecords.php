@@ -10,10 +10,6 @@
  *   display=plan      Retuns student records that match the students chosen degree plan.
  *   display=notplan   Returns student records that do not match students current degree plan.
  */
-ini_set('display_errors', 1);
-ini_set('error_reporting', E_ALL);
-
-phpinfo();
 
 header('Content-Type: application/json');
 include '../php/mysql.php';
@@ -26,6 +22,8 @@ if (isset($_REQUEST["display"])) {
 } else {
     $display = "all";
 }
+
+echo $display;
 
 if (isset($studentid)) {
 
@@ -46,7 +44,7 @@ if (isset($studentid)) {
                     ON StudentRecords.courseID = courses.courseID
                     WHERE degreePlanRequirements.planID = $chosenPlan
                     AND StudentRecords.studentID = $studentid";
-        } if else ($display == "notplan") {
+        } else if ($display == "notplan") {
             $sql = "SELECT sr.studentID, sr.courseID 
                     FROM StudentRecords sr
                     WHERE sr.studentID = $studentid
