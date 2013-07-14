@@ -1,8 +1,20 @@
 Change Log
 ----------
+- 2013-07-14 (James)
+    * Database change: `courses` table now has id that matches original hard coded degree plan file
+      and new courses will auto increment id.
+    * Database change: `degreePlanRequirements` table, requirement column now uses same text as hard 
+      coded degree plan for requirements that can be meet by many classes. The hard coded plan has a 
+      place holder for these kinds of requirements (for example SCI CI does not link to the multiple 
+      Science Course 1 options). The courses to meet a requirement can be found with a sql 
+      statement, and I've added some examples at the end of [getting info from the 
+      database](https://github.com/CSPVAMU/PantherTracksMobile/wiki/getting-info-from-the-database)
+      page in the wiki.
+    
+
 - 2013-07-10 (James)
     * Added an option to return student records that are not part of a students current degree plan
-      in studentRecords.php.
+      in `studentRecords.php`.
 
 - 2013-07-10 (Hazar)
     * Added an array that just returns class IDs under includes/degreeplan.php
