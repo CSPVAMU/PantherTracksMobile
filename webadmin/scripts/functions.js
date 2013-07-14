@@ -22,19 +22,21 @@ Array.prototype.unique = function(){
  */
 function getDegreePlanList() {
     $.ajax({
-        url: "plan.php",
+        url: "scripts/plan.php",
         dataType: "json",
         success: function(data) {
             var plansNum = data.length;
             for(i = 0; i < plansNum; i++) {
                 $("#plan-list ul").append(
                     "<li id=\"" + data[i]["planID"] + "\" class=\"plan\">" + 
-                        data[i]["name"] + 
+                        "<span class=\"plan-name\">" + data[i]["name"] + "</span>" +
+                        "<a href=\"dp-edit.php?planid=" + data[i]["planID"] + "\">edit</a>" +
+                        "<span class=\"plan-delete\">delete</span>" +
                     "</li>");
             }
         },
-        error: function() {
-            console.log("error from getDegreePlanList()");
+        error: function(err) {
+            console.log("error from getDegreePlanList(): " + err);
         }
     });
 }
@@ -52,7 +54,7 @@ function viewDegreePlanReq(planID) {
     var uniqueReq = [];
     var planCourses = [];
     $.ajax({
-        url: "plan.php?planID=" + planID,
+        url: "scripts/plan.php?planID=" + planID,
         dataType: "json",
         success: function (data) {
             var datalen = data.length;
@@ -80,8 +82,9 @@ function viewDegreePlanReq(planID) {
                         "<td>" + courseList + "</td>" +
                     "</tr>");
             }
-            console.log("call tablesorter");
             $("#display-table").tablesorter();
+            newheight = $("#display-table").height() + 150;
+            $(".wrapper").css("height", newheight);
         },
         error: function () {
             console.log("error from viewDegreePlanReq()");

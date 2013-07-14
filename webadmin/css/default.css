@@ -1,17 +1,82 @@
 @import url(reset.min.css);
 @import url(tablesorter.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+html,
+body {
+    background: #eee;
+    color: #555;
+    height: 100%;
+}
+
+h1 {
+    color: #333;
+    font-size: 26px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin: 0 0 10px 10px;
+}
+
+.wrapper {
+    background: #fffeff;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    margin: 0 auto;
+    width: 900px;
+}
 
 .hidden {
     display: none;
 }
 
+#plan-list {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+#plan-list ul {
+    list-style-type: none;
+    padding: 4px 0 0 0;
+}
+
+#plan-list ul li,
+#create-new  {
+    padding: 4px 0;
+    margin: 0 0 0 20px!important;
+}
+
+#plan-list a,
+.plan-delete {
+    color: #555;
+    font-size: 12px;
+    margin: 0 0 0 10px;
+    text-decoration: none;
+}
+
+#plan-list a:hover,
+.plan-delete:hover,
+.plan-name:hover  {
+    color: #333;
+    cursor: hand;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 #plan-details {
-    margin: 0 auto;
-    width: 75%;
+    float: right;
+    width: 550px;
 }
 
 #display-table,
 #display-table td {
     border: 1px solid;
     margin: 1px;
+    min-width: 150px;
 }
