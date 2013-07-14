@@ -36,17 +36,17 @@ Change Log
 - 2013-06-22 (James)
     * Removed a couple of temporary files I made notes in, but copied the [notes into the wiki]
       (https://github.com/CSPVAMU/PantherTracksMobile/wiki/some-temporary-notes).
-    * Made changes to user 160 in database to refelect changes in course table.
-    * Updated example database useage `includes/exampleStudentRecordCall.html`, had a problem
+    * Made changes to user 160 in database to reflect changes in course table.
+    * Updated example database usage `includes/exampleStudentRecordCall.html`, had a problem
       creating a sql statement that would return non-plan courses. Will have to look into it more.
 
 - 2013-06-17 (James)
     * Found the error for yesterday's last bullet, it wasn't a SQL problem it was a type in the
       database (no surprise there).
-    * For tablesorter jQuery plugin to sort by columns as expected the table needs to be recreated each time. Removing and apending 's break the sorting.
+    * For tablesorter jQuery plugin to sort by columns as expected the table needs to be recreated each time. Removing and appending 's break the sorting.
 
 - 2013-06-16 (James)
-    * Added define for PDO connection in `mysql-example.php`. Seperate these into a `config.php`
+    * Added define for PDO connection in `mysql-example.php`. Separate these into a `config.php`
       file in the future.
     * Manually added courses required for Computer Science 2012 and Computer Science 2008 degree
       plan. Still plenty of details to fill in, but hopefully some of that can wait until we have an
@@ -63,7 +63,7 @@ Change Log
       showed last Wednesday except the code is more refined (html for display, ajax call to php for
       database--the original example was all php).
 
-    > Just some thouhts on this, we're really developing three different things that all use the
+    > Just some thoughts on this, we're really developing three different things that all use the
     > same database. An Android app, an iOS app, and a website. Instead of repositories for each
     > maybe we can get away with just a folder for each.
 
@@ -142,3 +142,19 @@ can show a list of courses a student has taken, which ones apply to the student'
 plan, and which ones do not. The student can even change his degree plan to view "what if"
 scenarios. We can then show them the difference in time (be it semesters, credit hours, or years)
 to complete any degree.
+
+### Third Party Sign in System
+There are a lot of things to consider for login systems, the utmost being security. Instead of
+writing our own consider a third party. [This one](http://barebonescms.com/documentation/sso/) shows
+promise.
+
+> I learned about this project after starting [my own system](https://github.com/deplicator/UserAuthenticationSystem),
+  The author contacted me and we had a good discussion about reinventing the wheel. I learned a lot 
+  about security, and feel it is a good excersise. On the other hand I agree there is no need to 
+  write your own when there are so many open source ones to choose from that have been revised by
+  many security expereinced developers.
+
+
+
+
+
