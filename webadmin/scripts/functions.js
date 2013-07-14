@@ -130,6 +130,3 @@ function viewDegreePlanReq(planID) {
 
 
 
-
-
-
