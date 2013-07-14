@@ -10,6 +10,7 @@ Change Log
       statement, and I've added some examples at the end of [getting info from the 
       database](https://github.com/CSPVAMU/PantherTracksMobile/wiki/getting-info-from-the-database)
       page in the wiki.
+    * Web Admin: Slightly better degree plan viewing. Some file rearanging and added local jQuery.
     
 
 - 2013-07-10 (James)

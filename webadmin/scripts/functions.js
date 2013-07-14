@@ -40,7 +40,7 @@ function getDegreePlanList() {
         }
     });
 }
-var uniqueReq = [];
+
 /**
  * List requirements and courses that fulfill them for chosen degree plan.
  */
@@ -51,8 +51,8 @@ function viewDegreePlanReq(planID) {
     $("#display-table thead").append("<tr><th>Degree Requirements</th><th>Courses</th></tr>");
     $("#display-table").append($("<tbody>"));
     
-    var uniqueReq = [];
-    var planCourses = [];
+    uniqueReq = [];
+    planCourses = [];
     $.ajax({
         url: "scripts/plan.php?planID=" + planID,
         dataType: "json",
@@ -70,10 +70,10 @@ function viewDegreePlanReq(planID) {
             var numberOfCourses = planCourses.length;
             
             for(i = 0; i < numberOfRequiremetns; i++) {
-                var courseList = ""; 
+                courseList = ""; 
                 for (j = 0; j < numberOfCourses; j++) {
                     if (uniqueReq[i] == planCourses[j][0]) {
-                        courseList += planCourses[j][2] + "<br>";
+                        courseList += planCourses[j][1] + " - " + planCourses[j][2] + "<br>";
                     }
                 }
                 $("#display-table > tbody:last").append(
