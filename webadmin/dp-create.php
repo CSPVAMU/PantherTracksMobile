@@ -12,7 +12,7 @@ if (!isset($_REQUEST["operation"])) {
     <input type="hidden" value="insert" name="operation">
     Degree Plan Name: <input type="text" name="planname"><input type="submit" value="Submit"><br>
     <input id="add-single" type="button" value="add single course">
-    <input type="button" value="add elective"><br>
+    <input id="add-elective" type="button" value="add elective"><br>
     
     
 </form>
