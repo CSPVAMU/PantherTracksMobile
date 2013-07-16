@@ -9,6 +9,20 @@ body {
     height: 100%;
 }
 
+a,
+.small-link {
+    cursor: hand;
+    cursor: pointer;
+    color: #777;
+    text-decoration: none;
+}
+
+a:hover,
+.small-link:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
 h1 {
     color: #333;
     font-size: 26px;
@@ -36,37 +50,18 @@ h2 {
     display: none;
 }
 
+nav {
+    background: #333;
+    color: #eee;
+}
+
 #plan-list {
     float: left;
-    margin: 0 10px 0 0;
+    margin: 0 20px;
 }
 
 #plan-list ul {
     list-style-type: none;
-    padding: 4px 0 0 0;
-}
-
-#plan-list ul li,
-#create-new  {
-    padding: 4px 0;
-    margin: 0 0 0 20px!important;
-}
-
-#plan-list a,
-.plan-delete {
-    color: #555;
-    font-size: 12px;
-    margin: 0 0 0 10px;
-    text-decoration: none;
-}
-
-#plan-list a:hover,
-.plan-delete:hover,
-.plan-name:hover  {
-    color: #333;
-    cursor: hand;
-    cursor: pointer;
-    text-decoration: underline;
 }
 
 #plan-details {

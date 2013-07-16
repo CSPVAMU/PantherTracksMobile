@@ -31,7 +31,7 @@ function getDegreePlanList() {
                     "<li id=\"" + data[i]["planID"] + "\" class=\"plan\">" + 
                         "<span class=\"plan-name\">" + data[i]["name"] + "</span>" +
                         "<a href=\"dp-edit.php?planid=" + data[i]["planID"] + "\">edit</a>" +
-                        "<span class=\"plan-delete\">delete</span>" +
+                        "<span class=\"small-link plan-delete\">delete</span>" +
                     "</li>");
             }
         },

@@ -5,6 +5,10 @@ $("#plan-list ul").on("click", ".plan", function () {
     $(this).css("background", "yellow");
 });
 
+$("#dp-create-cancel").click(function () {
+    document.location.href = "index.php";
+});
+
 var singleCount = 0;
 $("#add-single").click(function () {
     singleCount += 1;
