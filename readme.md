@@ -1,5 +1,12 @@
 Change Log
 ----------
+- 2013-07-21 (James)
+    * Web Admin: Added course creation page.
+    * Web Admin: 
+
+- 2013-07-20 (James)
+    * Web Admin: Added navigation menu.
+
 - 2013-07-14 (James)
     * Database change: `courses` table now has id that matches original hard coded degree plan file
       and new courses will auto increment id.

@@ -15,6 +15,7 @@ a,
     cursor: pointer;
     color: #777;
     text-decoration: none;
+    font-size: 12px;
 }
 
 a:hover,
@@ -50,9 +51,50 @@ h2 {
     display: none;
 }
 
+/** menu **/
 nav {
-    background: #333;
-    color: #eee;
+    margin: 20px 0 50px 0;
+    color: #777;
+}
+
+nav > ul {
+    list-style: none;
+    background: #222;
+    padding: 9px;
+}
+
+nav > ul > li {
+    cursor: hand;
+    cursor: pointer;
+    display: inline;
+    padding: 6px 30px;
+    position: relative;
+}
+
+nav > ul > li  > a {
+    font-size: 17px;
+}
+
+nav > ul > li:hover {
+    background: #ddd;
+    display: inline;
+}
+
+nav > ul > li > ul {
+    background: #eee;
+    display: none;
+    position: absolute;
+    top: 34px;
+}
+
+nav > ul > li > ul > li {
+    display: block;
+    padding: 5px 15px 5px 5px;
+}
+
+nav > ul > li > ul > li:hover {
+    background: #888;
+    color: #222;
 }
 
 #plan-list {
@@ -62,6 +104,7 @@ nav {
 
 #plan-list ul {
     list-style-type: none;
+    line-height: 30px;
 }
 
 #plan-details {
@@ -93,3 +136,8 @@ form {
 .req-elective {
     border: 1px solid;
 }
+
+.plan > * {
+    padding: 0 10px;
+}
+

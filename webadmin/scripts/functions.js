@@ -92,8 +92,36 @@ function viewDegreePlanReq(planID) {
     });
 }
 
+function addSingleCourse(buttonID, label) {
+    var courses = [];
+    
+    // Add select section to button's parent.
+    if ($(".course_combobox").length == 0) {
+        var select_id = "courses_" + label;
+    } else {
+       var select_id = "courses_" + label + $(".course_combobox").length;
+    }
+    
+     $("#" + buttonID).parent().append("<label>" + label + "</label><select class=\"course_combobox\" id=\"" + select_id + "\" name=\"" + label + "\" ></select><br>");
 
+        
+    // Populate drop down with courses from courses table.
+    $.ajax({
+        url: "scripts/courses.php",
+        dataType: "json",
+        success: function (data) {
+            courses = data;
+        },
+        complete: function () {
+            courses.forEach(function (course) {
+                $("#" + select_id).append("<option value=\"" + course["courseID"] + "\">" + 
+                course["courseID"] + " - " + course["title"] +
+                "</option>");
+            });
+        }
+    });
 
+}
 
 
 

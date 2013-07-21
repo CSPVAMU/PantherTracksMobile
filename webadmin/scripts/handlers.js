@@ -9,26 +9,8 @@ $("#dp-create-cancel").click(function () {
     document.location.href = "index.php";
 });
 
-var singleCount = 0;
-$("#add-single").click(function () {
-    singleCount += 1;
-    var courses = [];
-    $(this).parent().append("<select id=\"courses" + singleCount + "\" name=\"courses" + singleCount + "\"></select><br>");
-    $.ajax({
-        url: "scripts/courses.php",
-        dataType: "json",
-        success: function (data) {
-            courses = data;
-        },
-        complete: function () {
-            courseslen = courses.length;
-            for (i = 0; i < courseslen; i++) {
-                $("#courses" + singleCount).append("<option value=\"" + courses[i]["id"] + "\">" + 
-                courses[i]["courseID"] + " - " + courses[i]["title"] +
-                "</option>");
-            }
-        }
-    });
+$(".add-single").click(function () {
+    addSingleCourse($(this).attr("id"), $(this).attr("label"));
 });
 
 var electiveCount = 0;
@@ -63,5 +45,55 @@ $("#add-elective").click(function () {
     });
 
 });
+
+
+$("nav > ul > li").hover(function () {
+
+    $(this).children("ul").show();
+
+}, function () {
+
+    $(this).children("ul").hide();
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
