@@ -51,6 +51,21 @@ h2 {
     display: none;
 }
 
+label {
+    width: 200px;
+    display: block;
+    float: left;
+    clear: both;
+    font-size: 12px;
+}
+
+.checkbox, textarea, select {
+    font-size: 10px;
+    line-height: 18px;
+    float: left;
+    clear: both;
+}
+
 /** menu **/
 nav {
     margin: 20px 0 50px 0;

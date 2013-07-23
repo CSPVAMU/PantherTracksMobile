@@ -32,7 +32,7 @@
                         "<td>" + course["subject"] + "</td>" +
                         "<td>" + course["title"] + "</td>" +
                         "<td>" + course["creditHours"] + "</td>" +
-                        "<td><a href=\"course-edit?id=" + course["id"] + "\">edit</a></td>" +
+                        "<td><a href=\"course-edit.php?id=" + course["id"] + "\">edit</a></td>" +
                         "<td><a href=\"\">remove</a></td>" +
                     "</tr>");
              

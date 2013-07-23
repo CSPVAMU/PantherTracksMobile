@@ -1,8 +1,20 @@
 <?php include("header.html");
+include('scripts/config.php');
 
-if (isset($_REQUEST["add-course"])) {
-    include('scripts/config.php');
+if (isset($_REQUEST["id"])) {
+    try {
+        $DBH = new PDO(PDO_CONNECTION, DB_USER, DB_PASS);
+        $STH = $DBH->query('SELECT * FROM courses WHERE id = $_REQUEST["id"]');  
+        $STH->setFetchMode(PDO::FETCH_ASSOC);
+        $record = $STH->fetch();
+        echo $record["id"];
+    } catch(PDOException $e) {
+        echo $e->getMessage();
+    }
     
+}
+
+if (isset($_REQUEST["update-course"])) {
     $query  = explode('&', $_SERVER['QUERY_STRING']);
     $params = array();
     
@@ -54,7 +66,7 @@ if (isset($_REQUEST["add-course"])) {
         echo $e->getMessage();
     }
     
-    echo "Added " . $_REQUEST["course-title"] . " to the database.<br><br>";
+    echo $_REQUEST["course-title"] . " updated in the database.<br><br>";
 }
 
 ?>
