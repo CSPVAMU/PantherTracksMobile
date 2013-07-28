@@ -1,5 +1,9 @@
 Change Log
 ----------
+- 2013-07-28 (Hazar)
+   * Created a function out of `php/studentsettings.php`
+   * Updated broken ajax and php pages to make them PHP 5.3 compatible 
+
 - 2013-07-21 (James)
     * Web Admin: Added course creation page.
     * Web Admin: 
