@@ -1,14 +1,12 @@
 <?php 
 
 //ini_set( "display_errors", 0);
-header('Access-Control-Allow-Origin: *');
-include '../php/mysql.php';
+include_once '../php/mysql.php';
 
 if(isset($_POST['studentid']))
 	$studentid=$_POST['studentid'];
 if(isset($_POST['format']))
 	$format=$_POST['format'];
-$format="json";
 
 function settings($studentid, $data="array"){
 	$db = & CDB::get_db();

@@ -2,7 +2,7 @@ function getsettings(callback){
 	 $.ajax({
 		url: "http://pvamu.hazar.us/php/studentsettings.php",
 		async: false,
-		data: {studentid: sessionStorage.student},
+		data: {studentid: sessionStorage.student, format: "json"},
 		type: 'POST',
 		dataType: 'json',
 		success: callback,
