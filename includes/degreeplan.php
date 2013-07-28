@@ -27,6 +27,30 @@ $class_nums[17]="18";
 $class_nums[18]="19";
 $class_nums[19]="20";
 $class_nums[20]="21";
+$class_nums[21]="22";
+$class_nums[22]="23";
+$class_nums[23]="24";
+$class_nums[24]="25";
+$class_nums[25]="26";
+$class_nums[26]="27";
+$class_nums[27]="28";
+$class_nums[28]="29";
+$class_nums[29]="30";
+$class_nums[30]="31";
+$class_nums[31]="32";
+$class_nums[32]="33";
+$class_nums[33]="34";
+$class_nums[34]="35";
+$class_nums[35]="36";
+$class_nums[36]="37";
+$class_nums[37]="38";
+$class_nums[38]="39";
+$class_nums[39]="40";
+$class_nums[40]="41";
+$class_nums[41]="42";
+$class_nums[42]="43";
+$class_nums[43]="44";
+$class_nums[44]="45";
 
 
 //FULL DETAILS
@@ -260,7 +284,7 @@ $classes[22][2]="Science Course III*";
 $classes[22][3]=3; //# of Credit Hours
 $classes[22][4]=2; //Spring
 $classes[22][5]="R"; //Required
-$classes[22][6]="0"; //$prereqs
+$classes[22][6]="17"; //$prereqs
 $classes[22][7]="24"; //$coreqs
 
 $classes[23][0]="24";
@@ -423,7 +447,7 @@ $classes[38][7]="0"; //$coreqs
 	
 //Social & Behavioral Sciencw
 $classes[39][0]="40";
-$classes[39][1]="S&B";
+$classes[39][1]="S&B ELEC";
 $classes[39][2]="Social & Behavioral Science";
 $classes[39][3]=3; //# of Credit Hours
 $classes[39][4]=2; //Spring
