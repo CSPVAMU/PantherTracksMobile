@@ -32,6 +32,12 @@ include '../php/mysql.php';
 // We should use our custom function to handle errors.  
 //set_error_handler('nettuts_error_handler'); 
 
+if(isset($_POST['studentid']))
+	$studentid=$_POST['studentid'];
+if(isset($_POST['format']))
+	$format=$_POST['format'];
+$format="json";
+	
 function studentHistory ($studentid, $type="ordered"){
 	$db = & CDB::get_db();
 	$sql = "Select `classID`, `modifiedBy`, `modifiedOn`, `status` FROM `StudentRecords` WHERE `studentID`='".$studentid."' ORDER BY `classID` ASC";
@@ -62,7 +68,7 @@ function studentHistory ($studentid, $type="ordered"){
 		return $list;
 }
 
-if($format=="json"){
+if(isset($format) && $format=="json"){
 	$ordered = array();
 	$ordered = studentHistory($studentid);
 	echo json_encode($ordered);	

@@ -3,6 +3,7 @@ function getsettings(callback){
 		url: "http://pvamu.hazar.us/php/studentsettings.php",
 		async: false,
 		data: {studentid: sessionStorage.student},
+		type: 'POST',
 		dataType: 'json',
 		success: callback,
 		dataType: "json" 

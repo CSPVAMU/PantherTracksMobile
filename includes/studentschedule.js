@@ -3,7 +3,7 @@ function getrecords(callback){
 		url: "http://pvamu.hazar.us/includes/studenthistory.php",
 		async: false,
 		data: {studentid: sessionStorage.student, format: "json"},
-		dataType: 'json',
+		type: 'POST',
 		success: callback,
 		dataType: "json" 
 	});
@@ -17,7 +17,6 @@ function schedulefunction() {
 	var stoprunning=setTimeout(timeout(), 3000);
 	clearTimeout(stoprunning);
 	function timeout() {
-		console.log("got here");
 	if( $("h1.name2")!=null ){
 		$.post("http://pvamu.hazar.us/php/getName.php", {studentid: sessionStorage.student}, function(data) {
 			var name=data;

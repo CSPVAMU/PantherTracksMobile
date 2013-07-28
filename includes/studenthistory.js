@@ -12,6 +12,7 @@ function history(){
     	url: "http://pvamu.hazar.us/includes/studenthistory.php",
     	async: false,
 		data: {studentid: sessionStorage.student, format: "json"},
+		type: 'POST', 
     	dataType: 'json',
     	success: function(data) {
     		for (var i=0, len=data.length; i < len; i++) {
