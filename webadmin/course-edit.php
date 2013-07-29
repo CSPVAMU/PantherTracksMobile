@@ -2,15 +2,36 @@
 include('scripts/config.php');
 
 if (isset($_REQUEST["id"])) {
+    $id = intval($_REQUEST["id"]);
     try {
         $DBH = new PDO(PDO_CONNECTION, DB_USER, DB_PASS);
-        $STH = $DBH->query('SELECT * FROM courses WHERE id = $_REQUEST["id"]');  
+        $STH = $DBH->query("SELECT * FROM `courses` WHERE id = $id");  
         $STH->setFetchMode(PDO::FETCH_ASSOC);
         $record = $STH->fetch();
-        echo $record["id"];
     } catch(PDOException $e) {
-        echo $e->getMessage();
-    }
+    } ?>
+    
+    
+<h2>Edit Course: <?php echo $record["title"]; ?></h2>
+
+<form method="get">
+    <input type="hidden" value="update" name="update-course">
+    <input type="hidden" value="<?php echo $record["id"]; ?>" name="updateid">
+    <input type="submit" value="Submit">
+    <input id="dp-create-cancel" type="button" value="Cancel"><br>
+    <input class="add-single" id="add-prereq" label="prereq" type="button" value="add pre-requiste course">
+    <input class="add-single" id="add-coreq" label="co-req" type="button" value="add co-requisite course"><br>
+    <label>Course Title:</label><input type="text" name="course-title" value="<?php echo $record["title"]; ?>"><br>
+    <label>Course and Subject Identifier:</label><input type="text" name="course-id" value="<?php echo $record["courseID"]; ?>"><br>
+    <label>Credit Hours:</label><input type="text" name="course-hours" value="<?php echo $record["creditHours"]; ?>"><br>
+    <label>Normal Semester this course is offered:</label><br>
+    <div class="checkbox"><input type="checkbox" name="spring" value="spring" <?php if ($record["spring"] == '1') { echo  'checked="true"'; } ?>>Spring?</div>
+    <div class="checkbox"><input type="checkbox" name="fall" value="fall" <?php if ($record["fall"] == '1') { echo  'checked="true"'; } ?>>Fall?</div>
+    <div class="checkbox"><input type="checkbox" name="summer" value="summer" <?php if ($record["summer"] == '1') { echo  'checked="true"'; } ?>>Summer?</div>
+    <label>Catalog Description:</label><textarea name="course-description" cols="24" value="<?php echo $record["description"]; ?>"></textarea><br>
+</form>
+
+    <?php
     
 }
 
@@ -23,6 +44,7 @@ if (isset($_REQUEST["update-course"])) {
         $params[urldecode($name)][] = urldecode($value);
     }
     
+    $id = $_REQUEST["updateid"];
     $courseID = $_REQUEST["course-id"];
     $subject = substr($_REQUEST["course-id"], 0, 4);
     $title = $_REQUEST["course-title"];
@@ -51,17 +73,14 @@ if (isset($_REQUEST["update-course"])) {
     if (count($prereqs) == 1) { $prereqs = substr($prereqs, 0, -1); }
     $prereqs = $prereqs . "]";
     
-    echo $prereqs;
-    echo $coreqs;
-
     try {
         $DBH = new PDO(PDO_CONNECTION, DB_USER, DB_PASS);
-        $STH = $DBH->prepare("INSERT INTO 
-                              courses (`courseID`, `subject`, `title`, `creditHours`, `level`,
-                                       `fall`, `spring`, `summer`, `coreqs`, `prereqs`, `description`)
-                                values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); 
-        $STH->execute([$courseID, $subject, $title, $creditHours, $level,
-                       $fall, $spring, $summer, $coreqs, $prereqs, $description]);  
+        $STH = $DBH->prepare("UPDATE `courses` 
+            SET `courseID`=?,`subject`=?,`title`=?, `creditHours`=?,`level`=?,`fall`=?,`spring`=?,
+                `summer`=?,`coreqs`=?,`prereqs`=?,`description`=?
+            WHERE `id` = ?"); 
+        $STH->execute([$courseID, $subject, $title, $creditHours, $level, $fall, $spring, $summer, 
+                       $coreqs, $prereqs, $description, $id]);  
     } catch(PDOException $e) {
         echo $e->getMessage();
     }
@@ -71,23 +90,6 @@ if (isset($_REQUEST["update-course"])) {
 
 ?>
 
-<h2>Create New Course</h2>
-
-<form method="get">
-    <input type="hidden" value="insert" name="add-course">
-    <input type="submit" value="Submit">
-    <input id="dp-create-cancel" type="button" value="Cancel"><br>
-    <input class="add-single" id="add-prereq" label="prereq" type="button" value="add pre-requiste course">
-    <input class="add-single" id="add-coreq" label="co-req" type="button" value="add co-requisite course"><br>
-    <label>Course Title:</label><input type="text" name="course-title"><br>
-    <label>Course and Subject Identifier:</label><input type="text" name="course-id"><br>
-    <label>Credit Hours:</label><input type="text" name="course-hours"><br>
-    <label>Normal Semester this course is offered:</label><br>
-    <div class="checkbox"><input type="checkbox" name="spring" value="spring">Spring?</div>
-    <div class="checkbox"><input type="checkbox" name="fall" value="fall">Fall?</div>
-    <div class="checkbox"><input type="checkbox" name="summer" value="summer">Summer?</div>
-    <label>Catalog Description:</label><textarea name="course-description" cols="24"></textarea><br>
-</form>
 
 
 <?php include("footer.html"); ?>

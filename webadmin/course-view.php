@@ -33,7 +33,7 @@
                         "<td>" + course["title"] + "</td>" +
                         "<td>" + course["creditHours"] + "</td>" +
                         "<td><a href=\"course-edit.php?id=" + course["id"] + "\">edit</a></td>" +
-                        "<td><a href=\"\">remove</a></td>" +
+                        "<td><a href=\"course-delete.php?id=" + course["id"] + "\">remove</a></td>" +
                     "</tr>");
              
             });
