@@ -4,7 +4,7 @@ Change Log
     * Updated schedule function to resolve error from last time, unfortunately errors remain: must see why some classes are being scheduled twice and consider not giving CS classes a priority over other classes if they are not prereqs to future classes so that we don't have 4 CS classes scheduled for one semester while the follwing year all classes are electives
 
 - 2013-08-07 (Hazar)
-   * Completed algorithm using a total knapsack approach, unfortunately the completed algorithm did not result in a perfect schedule and so needs to be modified to only use a knapsack algorithm after schedule classes in the 2-dimentional priority queue
+   * Completed algorithm using a total knapsack approach, unfortunately the completed algorithm did not result in a perfect schedule and so needs to be modified to only use a knapsack algorithm for classes in stacks after scheduling classes in the 2-dimentional priority queue
    
 - 2013-07-28 (James)
     * Web Admin: finished course CRUD.
