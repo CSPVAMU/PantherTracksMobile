@@ -34,7 +34,11 @@ if (isset($_REQUEST["delete-plan"])) {
         try {
             $DBH = new PDO(PDO_CONNECTION, DB_USER, DB_PASS);
             $STH = $DBH->prepare("DELETE FROM `degreeplandata` WHERE planID = $id"); 
+            $STH->execute();
+			
+			$STH = $DBH->prepare("DELETE FROM `degreeplanrequirements` WHERE planID = $id"); 
             $STH->execute();  
+			
         } catch(PDOException $e) {
             echo $e->getMessage();
         }

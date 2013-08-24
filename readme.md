@@ -2,6 +2,7 @@ Change Log
 ----------
 - 2013-08-24 (James)
 	* Increased compatability with PHP > 5.4, specifically dealing with array creation.
+	* Degree plans can be deleted.
 	
 - 2013-08-12 (Hazar)
     * Updated schedule function to resolve error from last time, unfortunately errors remain: must see why some classes are being scheduled twice and consider not giving CS classes a priority over other classes if they are not prereqs to future classes so that we don't have 4 CS classes scheduled for one semester while the follwing year all classes are electives
