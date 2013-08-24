@@ -34,8 +34,8 @@ if (!isset($_REQUEST["operation"])) {
 	<div>
     <input type="submit" value="Submit">
     <input id="dp-create-cancel" type="button" value="Cancel"><br>
-    <input class="add-single" type="button" value="add single course">
-    <input id="add-elective" type="button" value="add elective"><br>
+    <input class="add-single" id="add-single" label="SingleCourseRequirement" type="button" value="add single course">
+    <input id="add-elective" label="ElectiveRequirement" type="button" value="add elective"><br>
     </div>
     
 </form>

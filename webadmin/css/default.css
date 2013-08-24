@@ -150,6 +150,7 @@ form {
 
 .req-elective {
     border: 1px solid;
+	clear: both;
 }
 
 .plan > * {

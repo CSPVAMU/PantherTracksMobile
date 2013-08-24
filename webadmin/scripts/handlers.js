@@ -23,7 +23,6 @@ $("#add-elective").click(function () {
         
     var specificElectiveCount = 0;
     $(".add-specific-elective").click(function () {
-        console.log("somethig");
         specificElectiveCount += 1;
         var coursesEle = [];
         $(this).parent().append("<select id=\"coursesEle" + specificElectiveCount + "\" name=\"coursesEle" + specificElectiveCount + "\"></select><br>");

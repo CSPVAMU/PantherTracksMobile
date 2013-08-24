@@ -79,8 +79,8 @@ if (isset($_REQUEST["update-course"])) {
             SET `courseID`=?,`subject`=?,`title`=?, `creditHours`=?,`level`=?,`fall`=?,`spring`=?,
                 `summer`=?,`coreqs`=?,`prereqs`=?,`description`=?
             WHERE `id` = ?"); 
-        $STH->execute([$courseID, $subject, $title, $creditHours, $level, $fall, $spring, $summer, 
-                       $coreqs, $prereqs, $description, $id]);  
+        $STH->execute(array($courseID, $subject, $title, $creditHours, $level, $fall, $spring, $summer, 
+                       $coreqs, $prereqs, $description, $id));  
     } catch(PDOException $e) {
         echo $e->getMessage();
     }
