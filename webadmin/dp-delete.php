@@ -1,8 +1,8 @@
 <?php include("header.html");
 include('scripts/config.php');
 
-if (isset($_REQUEST["id"])) {
-    $id = intval($_REQUEST["id"]);
+if (isset($_REQUEST["planid"])) {
+    $id = intval($_REQUEST["planid"]);
     try {
         $DBH = new PDO(PDO_CONNECTION, DB_USER, DB_PASS);
         $STH = $DBH->query("SELECT * FROM `degreeplandata` WHERE planID = $id");  
@@ -16,6 +16,8 @@ if (isset($_REQUEST["id"])) {
 
 <form method="get">
     <input type="hidden" value="confirmed" name="delete-plan">
+    <input type="hidden" value="<?php echo $record["name"]; ?>" name="planname">
+    <input type="hidden" value="<?php echo $record["planID"]; ?>" name="id">
     <input type="submit" value="Yes, delete this degree plan">
     <input id="dp-create-cancel" type="button" value="No, do no delete anything"><br>
 </form>
@@ -26,8 +28,9 @@ if (isset($_REQUEST["id"])) {
 
 if (isset($_REQUEST["delete-plan"])) {
     if($_REQUEST["delete-plan"] == "confirmed") {
-        $id = $_REQUEST["planID"];
-        
+        $id = $_REQUEST["id"];
+        $title =  $_REQUEST["planname"];
+		
         try {
             $DBH = new PDO(PDO_CONNECTION, DB_USER, DB_PASS);
             $STH = $DBH->prepare("DELETE FROM `degreeplandata` WHERE planID = $id"); 
