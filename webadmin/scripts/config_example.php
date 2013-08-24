@@ -6,4 +6,4 @@
 //Database credentials
 define("PDO_CONNECTION", "mysql:host=localhost;dbname=pvamu_planner");
 define("DB_USER", "root");
-define("DB_PASS", "Joseph1279");
+define("DB_PASS", "");

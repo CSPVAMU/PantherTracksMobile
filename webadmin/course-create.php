@@ -47,9 +47,9 @@ if (isset($_REQUEST["add-course"])) {
         $STH = $DBH->prepare("INSERT INTO 
                               courses (`courseID`, `subject`, `title`, `creditHours`, `level`,
                                        `fall`, `spring`, `summer`, `coreqs`, `prereqs`, `description`)
-                                values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); 
-        $STH->execute([$courseID, $subject, $title, $creditHours, $level,
-                       $fall, $spring, $summer, $coreqs, $prereqs, $description]);  
+                                values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+								
+        $STH->execute(array($courseID, $subject, $title, $creditHours, $level, $fall, $spring, $summer, $coreqs, $prereqs, $description));  
     } catch(PDOException $e) {
         echo $e->getMessage();
     }
